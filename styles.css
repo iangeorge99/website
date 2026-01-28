@@ -436,3 +436,43 @@ a:hover{ text-decoration:underline; }
   border:1px solid var(--line);
   z-index: 100;
 }
+/* =========================
+   Mobile panel fixes
+   ========================= */
+
+@media (max-width: 640px){
+
+  /* Force all multi-column grids into 1 column */
+  .split,
+  .two,
+  .cards,
+  .steps,
+  .anchor-grid,
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Improve panel spacing and readability */
+  .panel,
+  .card,
+  .step {
+    padding: 16px;
+  }
+
+  .panel ul,
+  .card ul {
+    padding-left: 18px;
+  }
+
+  /* Prevent narrow squeezed cards */
+  .card, .panel {
+    width: 100%;
+  }
+
+  /* Headings scale better on phones */
+  .h1 { font-size: 30px; }
+  .h2 { font-size: 22px; }
+
+  /* Reduce tall empty feeling */
+  .section { padding: 48px 0; }
+}
