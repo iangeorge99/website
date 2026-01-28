@@ -476,3 +476,45 @@ a:hover{ text-decoration:underline; }
   /* Reduce tall empty feeling */
   .section { padding: 48px 0; }
 }
+/* =========================
+   HARD mobile layout fixes
+   (prevents side-by-side panels on phones)
+   ========================= */
+@media (max-width: 720px){
+
+  /* Any 2-column split MUST stack */
+  .split{
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Any container using your generic 2-column pattern MUST stack */
+  .two{
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Ensure cards/steps stack too */
+  .cards,
+  .steps,
+  .anchor-grid{
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Remove the “squeezed card” look */
+  .panel,
+  .card,
+  .step{
+    padding: 16px;
+  }
+
+  /* Prevent overflow from long content */
+  .panel,
+  .card{
+    min-width: 0;
+  }
+
+  /* Make buttons not overflow */
+  .btn{
+    max-width: 100%;
+    white-space: normal;
+  }
+}
